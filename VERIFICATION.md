@@ -1,5 +1,11 @@
 # Verification record
 
+## Hosted verification completed
+
+[GitHub Actions run 40213271832](https://github.com/Dirhaya/Local-AI/actions/runs/40213271832) passed for source commit `35cbb2ecf7060675b16a3b2b4dfa19359c3ccbcf`. The full pytest suite passed on Ubuntu and Windows. A real Chromium/Python-server test passed PDF upload and extraction, referenced Q&A, quiz generation through a deterministic local Ollama fixture, hidden solutions before submission, hint scoring, XP calculation, lock clearing and restoration after unlocking. Both platform jobs also verified the live signed manifest, archive checksum and safe release extraction. The release-package job passed.
+
+This does not measure real language-model quality or run the Python installer/Ollama downloads on a personal laptop. Microphone capture and real account integrations still require live testing with the user’s own devices/accounts. Older sections below retain their original environment limits for context.
+
 ## Version 0.2.0 study/update checks
 
 Completed in this workspace:
