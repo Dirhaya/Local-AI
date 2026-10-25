@@ -26,6 +26,9 @@ class UpdateTests(unittest.TestCase):
  def test_future_schema(self):
   m=self.manifest(archive());m['data_schema']=2
   with self.assertRaisesRegex(ValueError,'schema'):verify_manifest(m,self.public)
+ def test_configured_publisher_defaults_to_automatic_and_can_be_disabled(self):
+  atomic_json(self.app/'publisher.json',{'manifest_url':'https://example.com/feed','public_key':self.public})
+  m=UpdateManager(self.root/'data',self.app);self.assertTrue(m.status()['automatic']);m.preferences(False);self.assertFalse(m.status()['automatic'])
  def test_safe_extract(self):
   p=self.root/'release';extract_release(archive(),p,'0.3.0');self.assertTrue((p/'app/main.py').is_file())
  def test_reject_unsafe_paths_before_writing(self):

@@ -4,12 +4,12 @@
 
 Completed in this workspace:
 
-- 44 executable Python unit tests: 9 vault/backup/migration tests, 19 retrieval/readiness tests, 5 real-PDF extraction tests and 11 signature/archive/update tests. All passed.
+- 45 executable Python unit tests: 9 vault/backup/migration tests, 19 retrieval/readiness tests, 5 real-PDF extraction tests and 12 signature/archive/update tests. All passed.
 - 26 isolated Node assertions for study/update rendering, escaping, solution withholding, unavailable update feeds, lock-state clearing and select-control preservation. All passed. This is not real-browser verification.
 - Python source compilation and JavaScript syntax checks passed.
 - The update defaults loader was checked with PowerShell-style UTF-8 BOM input in the previous setup revision.
 
-Not completed: HTTP integration tests, real-browser layout/interaction, local-model question quality, speech/Windows installer execution, hosted signed releases, and GitHub CI. The build environment still lacks FastAPI/pytest/browser binaries and cannot download the required packages. Tests and an Ubuntu/Windows GitHub workflow are included for those checks; no passing CI result is claimed. The source is prepared for the owner-created Dirhaya/Local-AI repository; consult GitHub Actions for subsequent hosted test results.
+GitHub CI completed successfully on Ubuntu and Windows for commit 13a07091ce8e020bc0985f40493b706ddc795b96, including the full pytest suite, Node assertions, source compilation and PowerShell script parsing. The first Windows run exposed a separator-normalization bug in release archive validation; it was corrected and the rerun passed. The signed publisher revision has a separate subsequent CI run. Still not exercised: real-browser layout/interaction, local-model question quality, microphone capture, or actually installing software on a personal Windows laptop. The local build workspace itself still lacks FastAPI/pytest/browser binaries; hosted CI provided the complete backend test environment.
 
 The sections below record the earlier version's checks and remaining live acceptance steps.
 

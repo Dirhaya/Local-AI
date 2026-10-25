@@ -135,7 +135,7 @@ class UpdateManager:
     def status(self):
         cfg=self.config();prefs=read_json(self.root/'preferences.json',{})
         return {'version':self.current_version,'configured':bool(cfg.get('manifest_url') and cfg.get('public_key')),
-                'automatic':prefs.get('automatic',False),'pending':read_json(self.root/'pending.json',None),
+                'automatic':prefs.get('automatic',bool(cfg.get('manifest_url') and cfg.get('public_key'))),'pending':read_json(self.root/'pending.json',None),
                 'active':read_json(self.root/'active.json',None),'last_check':read_json(self.root/'last-check.json',None),
                 'message':'Updates need a hosted release feed and pinned signing key. Your vault stays outside the app folder.'}
 

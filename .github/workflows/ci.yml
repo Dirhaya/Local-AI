@@ -22,6 +22,8 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q
+      - name: Verify live signed release feed
+        run: python scripts/check_publisher.py
       - run: node --check app/static/study.js
       - run: node tests/test_study_ui.cjs
       - run: python -m compileall -q app scripts run.py

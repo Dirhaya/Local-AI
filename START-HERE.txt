@@ -1,13 +1,14 @@
 SULTAN LOCAL AI — WINDOWS QUICK START
 
-VERSION 0.2.0 — LAPTOP STUDY WORKSPACE
+VERSION 0.2.1 — LAPTOP STUDY WORKSPACE
 After setup, use the Sultan Local AI desktop shortcut.
 In Study arena: Add course -> Your PDFs -> Upload PDF -> Add Section.
 Choose your chapter, section and PDF pages, then ask questions or start practice.
 Player XP motivates practice; readiness levels need independent answer evidence.
 Read STUDY-GUIDE.md for the scoring rules. Level 0 means no evidence yet.
 Existing saved memory stays in the same encrypted data folder.
-Automatic updates are prepared but are NOT live until a release publisher is connected.
+Signed updates use your GitHub release feed and preserve the encrypted vault.
+The app checks after unlocking, then installs verified updates on the next restart.
 
 EASIEST OPTION (for your PC with Ollama already installed)
 Right-click the ZIP, choose Extract All, open the extracted folder, then
