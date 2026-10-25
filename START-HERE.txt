@@ -1,0 +1,78 @@
+SULTAN LOCAL AI — WINDOWS QUICK START
+
+VERSION 0.2.0 — LAPTOP STUDY WORKSPACE
+After setup, use the Sultan Local AI desktop shortcut.
+In Study arena: Add course -> Your PDFs -> Upload PDF -> Add Section.
+Choose your chapter, section and PDF pages, then ask questions or start practice.
+Player XP motivates practice; readiness levels need independent answer evidence.
+Read STUDY-GUIDE.md for the scoring rules. Level 0 means no evidence yet.
+Existing saved memory stays in the same encrypted data folder.
+Automatic updates are prepared but are NOT live until a release publisher is connected.
+
+EASIEST OPTION (for your PC with Ollama already installed)
+Right-click the ZIP, choose Extract All, open the extracted folder, then
+double-click SETUP-EVERYTHING.cmd. It installs Python 3.12 if needed,
+the app packages, a local chat model, and local speech recognition.
+When the browser opens, choose your vault passphrase. Keep the setup window open.
+First setup downloads several GB and can take a while. No commands to type.
+On future runs, use the desktop shortcut. Email/calendar accounts are added by you.
+
+MANUAL OPTION
+
+This is a local app with source code. You do not need an invite or an AI API key.
+Extract the entire ZIP into a folder before opening the launchers.
+
+1. Install Python 3.12 from https://www.python.org/downloads/
+   In the installer, tick "Add Python to PATH".
+
+2. Install Ollama from https://ollama.com/download/windows
+   Open Ollama, then double-click Setup-Local-Model-Windows.cmd in this folder.
+   It downloads qwen3.5:4b and sets Ollama's local-only environment variable.
+   Quit Ollama from the taskbar, then reopen it so the setting takes effect.
+   If your PC has limited RAM, use this smaller model in a terminal:
+       ollama pull qwen3.5:2b
+
+3. Double-click Start-Windows.cmd.
+   First launch downloads Python packages. Keep its window open while using the app.
+   Your browser should open http://127.0.0.1:8765
+   Create a passphrase of at least 12 characters. There is no recovery if lost.
+
+4. Open Settings & privacy in the app. Click Refresh local models if needed.
+   Choose your downloaded model and save settings. You can now chat locally.
+
+5. For meeting recordings and dictation, double-click Install-Speech-Windows.cmd.
+   It downloads a local multilingual speech model. Copy the folder it prints into
+   Speech model path in the app's Settings, then save.
+   Use Edge or Chrome and allow this local page to use the microphone.
+
+6. Email, remote calendar import and web research are optional. Enable external
+   connections in Settings before using them. Add an email app password or an
+   OAuth access token in Mail; read INTEGRATIONS.md for provider limitations.
+
+WHAT IS INCLUDED
+Local chat; meeting transcription and summaries; tasks; email reading/sending
+and cached search; local calendar with ICS and CalDAV import; editable memory;
+dictation; saved web research for flights, shopping and reservations; lock,
+auto-lock, encrypted storage, export and delete controls.
+
+BOUNDARIES
+Your own downloaded model supplies the AI. This app is not trained from scratch.
+Browser errands gather sources; you complete bookings and purchases yourself.
+Email has manual sync. Outlook generally needs OAuth, and this version does not
+include automatic OAuth sign-in/token refresh. CalDAV import is read-only.
+This version does not sync its vault to your phone or supply Face ID.
+
+VALIDATION
+Six encryption/vault tests passed in the build workspace. Python source compiles.
+See VERIFICATION.md for final checks and anything not tested. Full backend and
+live integrations must be checked on your PC; the build workspace could not
+download the backend dependencies.
+
+DATA
+Your encrypted vault is under %LOCALAPPDATA%\SultanLocalAI\vault.sqlite3.
+Back it up with the app CLOSED. Keep the passphrase separately.
+JSON exports are readable plaintext, so store them carefully.
+Audio is temporarily decoded in a local plaintext file, then removed after use.
+
+If a launcher fails, keep its error window open and share the error text.
+Read README.md for details, limitations, troubleshooting and developer checks.
