@@ -12,5 +12,5 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-".venv\Scripts\python.exe" -m pytest -q
+".venv\Scripts\python.exe" -m pytest -q tests
 pause

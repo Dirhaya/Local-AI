@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
-      - run: python -m pytest -q
+      - run: python -m pytest -q tests
       - name: Verify live signed release feed
         run: python scripts/check_publisher.py
       - run: node --check app/static/study.js
@@ -35,8 +35,21 @@ jobs:
           $tokens = $null
           [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path scripts/setup_windows.ps1), [ref]$tokens, [ref]$parseErrors) | Out-Null
           if ($parseErrors.Count -gt 0) { $parseErrors | Format-List; exit 1 }
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt "playwright>=1.50,<2"
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m pytest -q browser_tests
   release-package:
-    needs: test
+    needs: [test, browser]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
