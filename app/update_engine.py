@@ -102,7 +102,7 @@ def extract_release(raw,directory,expected_version):
             if len(parts)==1 and parts[0] not in ('run.py','version.json','requirements.txt','requirements-speech.txt','requirements-dev.txt','LICENSE','README.md','INTEGRATIONS.md','START-HERE.txt','VERIFICATION.md','STUDY-GUIDE.md','ARCHITECTURE.md','publisher.json','Start-Windows.cmd','SETUP-EVERYTHING.cmd','Setup-Local-Model-Windows.cmd','Install-Speech-Windows.cmd','Check-Windows.cmd'):
                 raise ValueError('Unexpected top-level release file.')
             if any(p.endswith(('.sqlite3','.pem','.key')) for p in parts) or parts[-1] in ('setup-defaults.json','.env'): raise ValueError('Private data must never be in a release.')
-            folded=str(rel).casefold()
+            folded=rel.as_posix().casefold()
             if folded in seen: raise ValueError('Duplicate release path.')
             seen.add(folded)
             total+=info.file_size
